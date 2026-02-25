@@ -1,0 +1,157 @@
+.access-control-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  backdrop-filter: blur(5px);
+}
+
+.access-control-modal {
+  background: var(--card-bg, #fff);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.access-control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color, #eee);
+  background: var(--second-bg, #f5f5f5);
+}
+
+.access-control-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--font-color, #333);
+}
+
+.access-control-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--font-color, #666);
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.access-control-close:hover {
+  color: var(--theme-color, #4a90d9);
+}
+
+.access-control-body {
+  padding: 24px 20px;
+}
+
+.access-control-message {
+  font-size: 16px;
+  color: var(--font-color, #333);
+  margin-bottom: 8px;
+}
+
+.access-control-description {
+  font-size: 14px;
+  color: var(--font-color-80, #666);
+  margin-bottom: 20px;
+}
+
+.access-control-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.access-control-password {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--background, #fff);
+  color: var(--font-color, #333);
+}
+
+.access-control-password:focus {
+  border-color: var(--theme-color, #4a90d9);
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+}
+
+.access-control-submit {
+  padding: 10px 20px;
+  background: var(--theme-color, #4a90d9);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.access-control-submit:hover {
+  background: var(--theme-color-hover, #3a7bc8);
+}
+
+.access-control-submit:active {
+  transform: scale(0.98);
+}
+
+.access-control-error {
+  font-size: 13px;
+  margin: 0 0 12px 0;
+}
+
+.access-control-back {
+  display: inline-block;
+  color: var(--theme-color, #4a90d9);
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.access-control-back:hover {
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .access-control-modal {
+  background: var(--card-bg, #1a1a1a);
+}
+
+[data-theme="dark"] .access-control-header {
+  background: var(--second-bg, #252525);
+  border-bottom-color: var(--border-color, #333);
+}
+
+[data-theme="dark"] .access-control-password {
+  background: var(--background, #252525);
+  border-color: var(--border-color, #444);
+}
+
+.access-denied .access-control-modal {
+  max-width: 450px;
+}
