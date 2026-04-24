@@ -1,0 +1,5 @@
+# Hexo build artifacts (do not commit)
+hexo-src/node_modules/
+hexo-src/public/
+hexo-src/db.json
+hexo-src/.deploy_git/

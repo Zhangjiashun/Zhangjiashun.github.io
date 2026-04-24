@@ -1,0 +1,126 @@
+# Hexo Configuration
+# Docs: https://hexo.io/docs/configuration.html
+
+# Site
+title: hustshun 的博客
+subtitle: '记录与分享'
+description: 'Hexo + Butterfly 主题的个人博客'
+keywords:
+  - 博客
+  - 技术
+  - Hexo
+author: hustshun
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# URL
+url: https://zhangjiashun.github.io
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+meta_generator: true
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+# Pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+include:
+exclude:
+ignore:
+
+# Extensions
+theme: butterfly
+
+# Deployment
+deploy:
+  type: git
+  repo: git@github.com:Zhangjiashun/Zhangjiashun.github.io.git
+  branch: master
+
+# Security
+encrypt:
+  enable: true
+  default_template: <script src="/lib/crypto-js.js"></script><script src="/lib/hbe.js"></script><div id="hexo-blog-encrypt" data-wpm="{{hbeWrong}}" data-wh="{{hbeWrong}}"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="{{hbeMessage}}" /><label for="hbePass">{{hbeMessage}}</label><div class="hbe-input-line"></div></div><p class="hbe-error">{{hbeWrong}}</p><script id="hbeData" type="hbeData" data-hbeDigest="{{hbeDigest}}" data-hbeSalt="{{hbeSalt}}" data-hbeKey="{{hbeKey}}">{{hbeEncryptedData}}</script></div>
+  default_message: 请输入密码访问此文章
+  default_wrong_pass: 密码错误，请重试
+
+# Access Control - 分类权限管理
+access_control:
+  enable: true
+  session_timeout: 3600
+  categories:
+    AI:
+      public: true
+      description: "人工智能相关文章，公开访问"
+    Zihuatanejo:
+      public: false
+      password: "zihuatanejo"
+      message: "此分类需要密码访问"
+      description: "生活随笔，私密访问"
+    Private:
+      public: false
+      password: "demo123"
+      message: "此分类需要密码访问"
+      description: "私密文章，需要密码访问"
+  default_public: true
+  messages:
+    password_required: "此内容需要密码访问"
+    password_placeholder: "请输入访问密码"
+    password_error: "密码错误，请重试"
+    access_denied: "您没有权限访问此内容"
